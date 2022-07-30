@@ -1,0 +1,39 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+
+    <a [routerLink]="['/productditl', product!.id]">
+      <mat-card-title> {{ product?.title }}</mat-card-title>
+    </a>
+    <mat-card-subtitle>{{ product?.category }}</mat-card-subtitle>
+  </mat-card-header>
+  <img
+    mat-card-image
+    src="{{ product?.image }}"
+    alt="Photo of a  product"
+    height="400px"
+  />
+  <span style="font-size: larger; font-weight: bold" #image
+    >Rate: {{ product?.rating?.rate }} Count: {{ product?.rating?.count }}</span
+  >
+  <mat-card-content>
+    <p>
+      {{ product?.description }}
+    </p>
+    <h1 appHighlight class="card-text">
+      Price: {{ product?.price | currency: "USD" }}
+    </h1>
+  </mat-card-content>
+  <mat-card-actions>
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="setProductToCart(product!)"
+    >
+      Add to Cart
+    </button>
+    <button mat-button color="warn" (click)="addFavItem(product!)">
+      Add To Favorite
+    </button>
+  </mat-card-actions>
+</mat-card>
