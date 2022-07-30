@@ -1,4 +1,4 @@
-# Task4
+# Task6 and task 7
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
 
